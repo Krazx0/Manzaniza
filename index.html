@@ -1,591 +1,722 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Manzaniza 🍎</title>
+<title>Manzaniza 🍎</title>
 
-  <meta name="description" content="Bienvenido a Manzaniza 🍎">
-  <meta name="theme-color" content="#ff003c">
+<meta name="description" content="Bienvenido a Manzaniza 🍎">
+<meta name="theme-color" content="#ff003c">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-    html {
-      scroll-behavior: smooth;
-    }
+html {
+    scroll-behavior: smooth;
+}
 
-    body {
-      background: #050505;
-      color: white;
-      overflow-x: hidden;
-    }
+body {
+    background: #050505;
+    color: white;
+    overflow-x: hidden;
+}
 
-    /* ===== FONDO ===== */
+/* ===== FONDO ===== */
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background:
-        radial-gradient(circle at 50% 20%, rgba(255, 0, 60, 0.18), transparent 35%),
-        radial-gradient(circle at 10% 80%, rgba(255, 0, 30, 0.08), transparent 30%);
-      pointer-events: none;
-      z-index: -2;
-    }
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(255, 0, 60, .18),
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at 10% 80%,
+            rgba(255, 0, 30, .12),
+            transparent 30%
+        );
+    z-index: -2;
+}
 
-    /* ===== MANZANITAS ===== */
+/* ===== MANZANITAS ===== */
 
-    .apple {
-      position: fixed;
-      z-index: -1;
-      pointer-events: none;
-      opacity: 0.35;
-      animation: floatApple linear infinite;
-      filter: drop-shadow(0 0 8px rgba(255, 0, 50, 0.5));
-    }
+.apple {
+    position: fixed;
+    pointer-events: none;
+    z-index: -1;
+    opacity: .35;
+    animation: floatApple linear infinite;
+    filter: drop-shadow(0 0 10px rgba(255,0,60,.5));
+}
 
-    @keyframes floatApple {
-      0% {
+@keyframes floatApple {
+    from {
         transform: translateY(110vh) rotate(0deg);
-      }
-
-      100% {
-        transform: translateY(-120px) rotate(360deg);
-      }
     }
 
-    /* ===== NAVBAR ===== */
+    to {
+        transform: translateY(-120px) rotate(360deg);
+    }
+}
+
+/* ===== NAVBAR ===== */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 70px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 7%;
+
+    background: rgba(0,0,0,.75);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(255,0,60,.2);
+
+    z-index: 100;
+}
+
+.logo {
+    color: #ff003c;
+    font-size: 24px;
+    font-weight: 900;
+
+    text-shadow:
+        0 0 10px rgba(255,0,60,.8),
+        0 0 25px rgba(255,0,60,.4);
+}
+
+nav a {
+    color: #ddd;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: #ff003c;
+    text-shadow: 0 0 10px #ff003c;
+}
+
+/* ===== HERO ===== */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 100px 20px 50px;
+}
+
+.apple-logo {
+    font-size: 100px;
+
+    animation: pulse 2s infinite ease-in-out;
+
+    filter:
+        drop-shadow(0 0 15px rgba(255,0,60,.7))
+        drop-shadow(0 0 35px rgba(255,0,60,.4));
+}
+
+@keyframes pulse {
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+.hero h1 {
+    font-size: clamp(55px, 10vw, 110px);
+    font-weight: 900;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff003c,
+            #ff5477,
+            white,
+            #ff003c
+        );
+
+    background-size: 300%;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: gradient 5s linear infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 300%;
+    }
+}
+
+.hero p {
+    max-width: 650px;
+
+    margin: 20px 0 35px;
+
+    color: #aaa;
+
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+/* ===== BOTONES ===== */
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px 28px;
+
+    border-radius: 12px;
+
+    color: white;
+    text-decoration: none;
+
+    font-weight: 800;
+
+    transition: .3s;
+
+    border: 1px solid rgba(255,255,255,.1);
+}
+
+.btn:hover {
+    transform: translateY(-5px) scale(1.04);
+}
+
+.discord {
+    background: #5865F2;
+
+    box-shadow:
+        0 0 20px rgba(88,101,242,.35);
+}
+
+.discord:hover {
+    box-shadow:
+        0 0 35px rgba(88,101,242,.7);
+}
+
+.whatsapp {
+    background: #25D366;
+    color: #061b0d;
+
+    box-shadow:
+        0 0 20px rgba(37,211,102,.25);
+}
+
+.whatsapp:hover {
+    box-shadow:
+        0 0 35px rgba(37,211,102,.6);
+}
+
+.red {
+    background: #ff003c;
+
+    box-shadow:
+        0 0 25px rgba(255,0,60,.3);
+}
+
+.red:hover {
+    box-shadow:
+        0 0 40px rgba(255,0,60,.7);
+}
+
+/* ===== SECCIONES ===== */
+
+section {
+    padding: 100px 7%;
+}
+
+.section-title {
+    text-align: center;
+
+    font-size: 42px;
+
+    margin-bottom: 50px;
+}
+
+.section-title span {
+    color: #ff003c;
+}
+
+/* ===== CARDS ===== */
+
+.cards {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(220px,1fr)
+        );
+
+    gap: 20px;
+}
+
+.card {
+    background: rgba(255,255,255,.035);
+
+    border:
+        1px solid
+        rgba(255,0,60,.15);
+
+    border-radius: 18px;
+
+    padding: 35px 25px;
+
+    text-align: center;
+
+    transition: .3s;
+
+    backdrop-filter: blur(10px);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+
+    border-color:
+        rgba(255,0,60,.6);
+
+    box-shadow:
+        0 0 35px
+        rgba(255,0,60,.18);
+}
+
+.card-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: #ff315f;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #999;
+    line-height: 1.6;
+}
+
+/* ===== COMMUNITY ===== */
+
+.community {
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 60px 30px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,0,60,.1),
+            rgba(255,255,255,.02)
+        );
+
+    border:
+        1px solid
+        rgba(255,0,60,.2);
+
+    box-shadow:
+        0 0 60px
+        rgba(255,0,60,.08);
+}
+
+.community h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.community p {
+    color: #999;
+
+    margin-bottom: 30px;
+
+    line-height: 1.7;
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+    padding: 40px 20px;
+
+    text-align: center;
+
+    color: #666;
+
+    border-top:
+        1px solid
+        rgba(255,0,60,.15);
+}
+
+footer span {
+    color: #ff003c;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media(max-width:650px) {
 
     nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 70px;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      padding: 0 7%;
-
-      background: rgba(0, 0, 0, 0.75);
-      backdrop-filter: blur(15px);
-
-      border-bottom: 1px solid rgba(255, 0, 55, 0.2);
-
-      z-index: 100;
+        padding: 0 20px;
     }
 
-    .logo {
-      font-size: 25px;
-      font-weight: 900;
-      color: #ff003c;
-      text-shadow: 0 0 15px rgba(255, 0, 60, 0.7);
-    }
-
-    nav a {
-      color: #ddd;
-      text-decoration: none;
-      margin-left: 25px;
-      transition: 0.3s;
-      font-weight: 600;
-    }
-
-    nav a:hover {
-      color: #ff003c;
-      text-shadow: 0 0 10px #ff003c;
-    }
-
-    /* ===== HERO ===== */
-
-    .hero {
-      min-height: 100vh;
-
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-
-      text-align: center;
-
-      padding: 100px 20px 50px;
+    nav .links {
+        display: none;
     }
 
     .apple-logo {
-      font-size: 100px;
-      animation: pulse 2s infinite ease-in-out;
-      filter: drop-shadow(0 0 25px rgba(255, 0, 55, 0.8));
-    }
-
-    @keyframes pulse {
-      0%, 100% {
-        transform: scale(1);
-      }
-
-      50% {
-        transform: scale(1.08);
-      }
-    }
-
-    .hero h1 {
-      font-size: clamp(50px, 9vw, 100px);
-      font-weight: 900;
-
-      background: linear-gradient(
-        90deg,
-        #ff003c,
-        #ff315f,
-        #ffffff,
-        #ff003c
-      );
-
-      background-size: 300%;
-
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-
-      animation: gradient 5s linear infinite;
-    }
-
-    @keyframes gradient {
-      0% {
-        background-position: 0%;
-      }
-
-      100% {
-        background-position: 300%;
-      }
+        font-size: 75px;
     }
 
     .hero p {
-      max-width: 650px;
-      color: #aaa;
-      font-size: 18px;
-      line-height: 1.7;
-      margin: 20px 0 35px;
+        font-size: 16px;
     }
-
-    /* ===== BOTONES ===== */
-
-    .buttons {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-
-      padding: 15px 28px;
-
-      border-radius: 12px;
-
-      text-decoration: none;
-      color: white;
-
-      font-weight: 800;
-
-      transition: 0.3s;
-
-      border: 1px solid rgba(255,255,255,0.1);
-
-      box-shadow: 0 0 20px rgba(255, 0, 50, 0.1);
-    }
-
-    .btn:hover {
-      transform: translateY(-5px) scale(1.03);
-    }
-
-    .discord {
-      background: #5865F2;
-      box-shadow: 0 0 25px rgba(88, 101, 242, 0.35);
-    }
-
-    .discord:hover {
-      box-shadow: 0 0 35px rgba(88, 101, 242, 0.7);
-    }
-
-    .whatsapp {
-      background: #25D366;
-      color: #061b0d;
-      box-shadow: 0 0 25px rgba(37, 211, 102, 0.25);
-    }
-
-    .whatsapp:hover {
-      box-shadow: 0 0 35px rgba(37, 211, 102, 0.6);
-    }
-
-    .red {
-      background: #ff003c;
-      box-shadow: 0 0 25px rgba(255, 0, 60, 0.3);
-    }
-
-    .red:hover {
-      box-shadow: 0 0 40px rgba(255, 0, 60, 0.7);
-    }
-
-    /* ===== SECCIONES ===== */
 
     section {
-      padding: 100px 7%;
+        padding: 80px 20px;
     }
 
     .section-title {
-      text-align: center;
-      font-size: 42px;
-      margin-bottom: 50px;
-    }
-
-    .section-title span {
-      color: #ff003c;
-    }
-
-    /* ===== CARDS ===== */
-
-    .cards {
-      max-width: 1100px;
-      margin: auto;
-
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-
-      gap: 20px;
-    }
-
-    .card {
-      background: rgba(255,255,255,0.035);
-
-      border: 1px solid rgba(255,0,60,0.15);
-
-      border-radius: 18px;
-
-      padding: 35px 25px;
-
-      text-align: center;
-
-      transition: 0.3s;
-
-      backdrop-filter: blur(10px);
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-
-      border-color: rgba(255,0,60,0.5);
-
-      box-shadow:
-        0 0 30px rgba(255,0,60,0.15);
-    }
-
-    .card-icon {
-      font-size: 45px;
-      margin-bottom: 15px;
-    }
-
-    .card h3 {
-      margin-bottom: 10px;
-      color: #ff315f;
-    }
-
-    .card p {
-      color: #999;
-      line-height: 1.6;
-    }
-
-    /* ===== COMMUNITY ===== */
-
-    .community {
-      max-width: 900px;
-      margin: auto;
-
-      text-align: center;
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(255,0,60,0.1),
-          rgba(255,255,255,0.02)
-        );
-
-      border: 1px solid rgba(255,0,60,0.2);
-
-      padding: 60px 30px;
-
-      border-radius: 25px;
-
-      box-shadow: 0 0 60px rgba(255,0,60,0.08);
-    }
-
-    .community h2 {
-      font-size: 40px;
-      margin-bottom: 15px;
-    }
-
-    .community p {
-      color: #999;
-      margin-bottom: 30px;
-      line-height: 1.7;
-    }
-
-    /* ===== FOOTER ===== */
-
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-
-      border-top: 1px solid rgba(255,0,60,0.15);
-
-      color: #666;
-    }
-
-    footer span {
-      color: #ff003c;
-    }
-
-    /* ===== RESPONSIVE ===== */
-
-    @media (max-width: 650px) {
-
-      nav {
-        padding: 0 20px;
-      }
-
-      nav .links {
-        display: none;
-      }
-
-      .apple-logo {
-        font-size: 75px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      section {
-        padding: 80px 20px;
-      }
-
-      .section-title {
         font-size: 32px;
-      }
-
     }
-  </style>
+
+}
+
+/* ===== SCROLLBAR ===== */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ff003c;
+    border-radius: 10px;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- MANZANITAS -->
+<!-- MANZANITAS -->
 
-  <div class="apple" style="left:5%;font-size:22px;animation-duration:13s;">🍎</div>
-  <div class="apple" style="left:15%;font-size:15px;animation-duration:17s;">🍎</div>
-  <div class="apple" style="left:28%;font-size:25px;animation-duration:12s;">🍎</div>
-  <div class="apple" style="left:40%;font-size:17px;animation-duration:19s;">🍎</div>
-  <div class="apple" style="left:52%;font-size:28px;animation-duration:14s;">🍎</div>
-  <div class="apple" style="left:65%;font-size:16px;animation-duration:18s;">🍎</div>
-  <div class="apple" style="left:77%;font-size:24px;animation-duration:11s;">🍎</div>
-  <div class="apple" style="left:90%;font-size:18px;animation-duration:16s;">🍎</div>
+<div class="apple" style="left:5%;font-size:22px;animation-duration:13s;">🍎</div>
+<div class="apple" style="left:15%;font-size:15px;animation-duration:17s;">🍎</div>
+<div class="apple" style="left:28%;font-size:25px;animation-duration:12s;">🍎</div>
+<div class="apple" style="left:40%;font-size:17px;animation-duration:19s;">🍎</div>
+<div class="apple" style="left:52%;font-size:28px;animation-duration:14s;">🍎</div>
+<div class="apple" style="left:65%;font-size:16px;animation-duration:18s;">🍎</div>
+<div class="apple" style="left:77%;font-size:24px;animation-duration:11s;">🍎</div>
+<div class="apple" style="left:90%;font-size:18px;animation-duration:16s;">🍎</div>
 
-  <!-- NAV -->
 
-  <nav>
+<!-- NAVBAR -->
 
-    <div class="logo">🍎 MANZANIZA</div>
+<nav>
 
-    <div class="links">
-      <a href="#inicio">Inicio</a>
-      <a href="#comunidad">Comunidad</a>
-      <a href="#contacto">Contacto</a>
+    <div class="logo">
+        🍎 MANZANIZA
     </div>
 
-  </nav>
+    <div class="links">
 
-  <!-- HERO -->
+        <a href="#inicio">
+            Inicio
+        </a>
 
-  <main>
+        <a href="#comunidad">
+            Comunidad
+        </a>
 
-    <section class="hero" id="inicio">
+        <a href="#contacto">
+            Contacto
+        </a>
 
-      <div class="apple-logo">🍎</div>
+    </div>
 
-      <h1>MANZANIZA</h1>
+</nav>
 
-      <p>
+
+<!-- HERO -->
+
+<section
+    class="hero"
+    id="inicio"
+>
+
+    <div class="apple-logo">
+        🍎
+    </div>
+
+    <h1>
+        MANZANIZA
+    </h1>
+
+    <p>
         Bienvenido a Manzaniza 🍎.
         Una comunidad creada para pasarla bien,
-        conocer gente y disfrutar juntos.
-      </p>
+        conocer gente, jugar y disfrutar juntos.
+    </p>
 
-      <div class="buttons">
-
-        <!-- CAMBIA ESTE ENLACE POR TU INVITACIÓN DE DISCORD -->
+    <div class="buttons">
 
         <a
-          class="btn discord"
-          href="https://discord.gg/TU_INVITACION"
-          target="_blank"
+            class="btn discord"
+            href="https://discord.gg/uGQUtyrjqH"
+            target="_blank"
         >
-          💬 Discord
+            💬 Discord
         </a>
 
         <a
-          class="btn whatsapp"
-          href="https://chat.whatsapp.com/GisMEh8KdP1Ily9Ubzxqgd?s=cl&p=i&mlu=4"
-          target="_blank"
+            class="btn whatsapp"
+            href="https://chat.whatsapp.com/GisMEh8KdP1Ily9Ubzxqgd?s=cl&p=i&mlu=4"
+            target="_blank"
         >
-          📱 WhatsApp
+            📱 WhatsApp
         </a>
 
-      </div>
+    </div>
 
-    </section>
+</section>
 
 
-    <!-- COMUNIDAD -->
+<!-- COMUNIDAD -->
 
-    <section id="comunidad">
+<section id="comunidad">
 
-      <h2 class="section-title">
-        ¿Qué es <span>Manzaniza</span>?
-      </h2>
+    <h2 class="section-title">
+        ¿Qué es
+        <span>Manzaniza</span>?
+    </h2>
 
-      <div class="cards">
-
-        <div class="card">
-          <div class="card-icon">🍎</div>
-          <h3>Comunidad</h3>
-          <p>
-            Un lugar para conocer personas,
-            conversar y pasar buenos momentos.
-          </p>
-        </div>
+    <div class="cards">
 
         <div class="card">
-          <div class="card-icon">🎮</div>
-          <h3>Diversión</h3>
-          <p>
-            Juegos, eventos y actividades
-            para disfrutar con la comunidad.
-          </p>
+
+            <div class="card-icon">
+                🍎
+            </div>
+
+            <h3>
+                Comunidad
+            </h3>
+
+            <p>
+                Un lugar para conocer personas,
+                conversar y pasar buenos momentos.
+            </p>
+
         </div>
+
 
         <div class="card">
-          <div class="card-icon">💬</div>
-          <h3>Chat</h3>
-          <p>
-            Habla con otros miembros y
-            forma nuevas amistades.
-          </p>
+
+            <div class="card-icon">
+                🎮
+            </div>
+
+            <h3>
+                Diversión
+            </h3>
+
+            <p>
+                Juegos, eventos y actividades
+                para disfrutar con la comunidad.
+            </p>
+
         </div>
+
 
         <div class="card">
-          <div class="card-icon">🔥</div>
-          <h3>Eventos</h3>
-          <p>
-            Participa en eventos especiales
-            organizados por Manzaniza.
-          </p>
+
+            <div class="card-icon">
+                💬
+            </div>
+
+            <h3>
+                Chat
+            </h3>
+
+            <p>
+                Habla con otros miembros
+                y forma nuevas amistades.
+            </p>
+
         </div>
 
-      </div>
 
-    </section>
+        <div class="card">
+
+            <div class="card-icon">
+                🔥
+            </div>
+
+            <h3>
+                Eventos
+            </h3>
+
+            <p>
+                Participa en eventos especiales
+                organizados por Manzaniza.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
 
 
-    <!-- JOIN -->
+<!-- UNETE -->
 
-    <section id="contacto">
+<section id="contacto">
 
-      <div class="community">
+    <div class="community">
 
-        <h2>Únete a <span style="color:#ff003c;">Manzaniza</span> 🍎</h2>
+        <h2>
+            Únete a
+            <span style="color:#ff003c;">
+                Manzaniza
+            </span>
+            🍎
+        </h2>
 
         <p>
-          ¿Qué esperas?
-          Únete a nuestra comunidad y empieza
-          a disfrutar de Manzaniza.
+            ¿Qué esperas?
+            Únete a nuestra comunidad y empieza
+            a disfrutar de Manzaniza.
         </p>
 
         <div class="buttons">
 
-          <a
-            class="btn red"
-            href="https://discord.gg/TU_INVITACION"
-            target="_blank"
-          >
-            🍎 Entrar a Discord
-          </a>
+            <a
+                class="btn red"
+                href="https://discord.gg/uGQUtyrjqH"
+                target="_blank"
+            >
+                🍎 Entrar a Discord
+            </a>
 
-          <a
-            class="btn whatsapp"
-            href="https://chat.whatsapp.com/GisMEh8KdP1Ily9Ubzxqgd?s=cl&p=i&mlu=4"
-            target="_blank"
-          >
-            📱 Unirse a WhatsApp
-          </a>
+            <a
+                class="btn whatsapp"
+                href="https://chat.whatsapp.com/GisMEh8KdP1Ily9Ubzxqgd?s=cl&p=i&mlu=4"
+                target="_blank"
+            >
+                📱 Unirse a WhatsApp
+            </a>
 
         </div>
 
-      </div>
+    </div>
 
-    </section>
-
-  </main>
+</section>
 
 
-  <!-- FOOTER -->
+<!-- FOOTER -->
 
-  <footer>
-    Hecho con ❤️ para <span>Manzaniza</span> 🍎
-  </footer>
+<footer>
+
+    Hecho con
+    ❤️
+    para
+    <span>Manzaniza</span>
+    🍎
+
+</footer>
 
 
-  <!-- EFECTO DE MANZANITAS EXTRA -->
+<!-- MANZANITAS AUTOMÁTICAS -->
 
-  <script>
+<script>
 
-    function createApple() {
+function createApple() {
 
-      const apple = document.createElement("div");
+    const apple =
+        document.createElement("div");
 
-      apple.className = "apple";
+    apple.className = "apple";
 
-      apple.textContent = "🍎";
+    apple.textContent = "🍎";
 
-      apple.style.left = Math.random() * 100 + "vw";
+    apple.style.left =
+        Math.random() * 100 + "vw";
 
-      apple.style.fontSize =
+    apple.style.fontSize =
         (Math.random() * 18 + 12) + "px";
 
-      apple.style.animationDuration =
+    apple.style.animationDuration =
         (Math.random() * 10 + 10) + "s";
 
-      apple.style.opacity =
-        (Math.random() * 0.35 + 0.15);
+    apple.style.opacity =
+        Math.random() * .35 + .15;
 
-      document.body.appendChild(apple);
+    document.body.appendChild(apple);
 
-      setTimeout(() => {
-        apple.remove();
-      }, 22000);
+    setTimeout(
+        () => apple.remove(),
+        22000
+    );
+}
 
-    }
+setInterval(
+    createApple,
+    1300
+);
 
-    setInterval(createApple, 1300);
-
-  </script>
+</script>
 
 </body>
 </html>
