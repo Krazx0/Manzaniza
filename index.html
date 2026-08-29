@@ -10,11 +10,10 @@
 <meta name="description" content="Bienvenido a Manzaniza 🍎">
 <meta name="theme-color" content="#ff003c">
 
-<!-- ICONOS -->
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 <style>
+
 * {
     margin: 0;
     padding: 0;
@@ -38,6 +37,7 @@ body::before {
     content: "";
     position: fixed;
     inset: 0;
+
     background:
         radial-gradient(
             circle at 50% 20%,
@@ -49,6 +49,7 @@ body::before {
             rgba(255, 0, 30, .12),
             transparent 30%
         );
+
     z-index: -2;
 }
 
@@ -58,97 +59,187 @@ body::before {
     position: fixed;
     pointer-events: none;
     z-index: -1;
+
     opacity: .35;
+
     animation: floatApple linear infinite;
-    filter: drop-shadow(0 0 10px rgba(255,0,60,.5));
+
+    filter:
+        drop-shadow(
+            0 0 10px
+            rgba(255,0,60,.5)
+        );
 }
 
 @keyframes floatApple {
+
     from {
-        transform: translateY(110vh) rotate(0deg);
+        transform:
+            translateY(110vh)
+            rotate(0deg);
     }
 
     to {
-        transform: translateY(-120px) rotate(360deg);
+        transform:
+            translateY(-120px)
+            rotate(360deg);
     }
+
 }
 
 /* ===== NAVBAR ===== */
 
 nav {
     position: fixed;
+
     top: 0;
     left: 0;
+
     width: 100%;
     height: 70px;
 
     display: flex;
+
     justify-content: space-between;
     align-items: center;
 
     padding: 0 7%;
 
-    background: rgba(0,0,0,.75);
-    backdrop-filter: blur(15px);
+    background:
+        rgba(0,0,0,.75);
 
-    border-bottom: 1px solid rgba(255,0,60,.2);
+    backdrop-filter:
+        blur(15px);
+
+    border-bottom:
+        1px solid
+        rgba(255,0,60,.2);
 
     z-index: 100;
 }
 
+/* ===== LOGO ===== */
+
 .logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
     color: #ff003c;
+
     font-size: 24px;
+
     font-weight: 900;
 
     text-shadow:
-        0 0 10px rgba(255,0,60,.8),
-        0 0 25px rgba(255,0,60,.4);
+        0 0 10px
+        rgba(255,0,60,.8),
+
+        0 0 25px
+        rgba(255,0,60,.4);
 }
 
+.logo img {
+
+    width: 34px;
+
+    height: 34px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+
+    filter:
+        drop-shadow(
+            0 0 7px
+            rgba(255,0,60,.8)
+        );
+
+    transition: .3s;
+}
+
+.logo:hover img {
+
+    transform:
+        scale(1.1)
+        rotate(-5deg);
+
+}
+
+/* ===== NAV LINKS ===== */
+
 nav a {
+
     color: #ddd;
+
     text-decoration: none;
+
     margin-left: 25px;
+
     font-weight: 600;
+
     transition: .3s;
 }
 
 nav a:hover {
+
     color: #ff003c;
-    text-shadow: 0 0 10px #ff003c;
+
+    text-shadow:
+        0 0 10px
+        #ff003c;
 }
 
 /* ===== HERO ===== */
 
 .hero {
+
     min-height: 100vh;
 
     display: flex;
+
     flex-direction: column;
+
     justify-content: center;
+
     align-items: center;
 
     text-align: center;
 
-    padding: 100px 20px 50px;
+    padding:
+        100px
+        20px
+        50px;
 }
 
-/* ===== IMAGEN PRINCIPAL ===== */
+/* ===== IMAGEN GRANDE ===== */
 
 .apple-logo {
+
     width: 180px;
+
     height: 180px;
 
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
-    animation: pulse 2s infinite ease-in-out;
+    animation:
+        pulse
+        2s
+        infinite
+        ease-in-out;
 }
 
 .apple-logo img {
+
     width: 100%;
+
     height: 100%;
 
     object-fit: contain;
@@ -156,25 +247,49 @@ nav a:hover {
     border-radius: 20px;
 
     filter:
-        drop-shadow(0 0 15px rgba(255,0,60,.7))
-        drop-shadow(0 0 35px rgba(255,0,60,.4));
+
+        drop-shadow(
+            0 0 15px
+            rgba(255,0,60,.7)
+        )
+
+        drop-shadow(
+            0 0 35px
+            rgba(255,0,60,.4)
+        );
 }
 
 @keyframes pulse {
+
     0%,100% {
-        transform: scale(1);
+
+        transform:
+            scale(1);
     }
 
     50% {
-        transform: scale(1.08);
+
+        transform:
+            scale(1.08);
     }
+
 }
 
+/* ===== TITULO ===== */
+
 .hero h1 {
-    font-size: clamp(55px, 10vw, 110px);
+
+    font-size:
+        clamp(
+            55px,
+            10vw,
+            110px
+        );
+
     font-weight: 900;
 
     background:
+
         linear-gradient(
             90deg,
             #ff003c,
@@ -186,113 +301,171 @@ nav a:hover {
     background-size: 300%;
 
     -webkit-background-clip: text;
+
     -webkit-text-fill-color: transparent;
 
-    animation: gradient 5s linear infinite;
+    animation:
+        gradient
+        5s
+        linear
+        infinite;
 }
 
 @keyframes gradient {
+
     0% {
-        background-position: 0%;
+
+        background-position:
+            0%;
     }
 
     100% {
-        background-position: 300%;
+
+        background-position:
+            300%;
     }
+
 }
 
+/* ===== TEXTO HERO ===== */
+
 .hero p {
+
     max-width: 650px;
 
-    margin: 20px 0 35px;
+    margin:
+        20px
+        0
+        35px;
 
     color: #aaa;
 
     font-size: 18px;
+
     line-height: 1.7;
 }
 
 /* ===== BOTONES ===== */
 
 .buttons {
+
     display: flex;
+
     justify-content: center;
+
     flex-wrap: wrap;
+
     gap: 15px;
 }
 
 .btn {
+
     display: inline-flex;
+
     align-items: center;
+
     justify-content: center;
+
     gap: 10px;
 
-    padding: 15px 28px;
+    padding:
+        15px
+        28px;
 
     border-radius: 12px;
 
     color: white;
+
     text-decoration: none;
 
     font-weight: 800;
 
     transition: .3s;
 
-    border: 1px solid rgba(255,255,255,.1);
+    border:
+        1px solid
+        rgba(255,255,255,.1);
 }
 
 .btn i {
+
     font-size: 20px;
 }
 
 .btn:hover {
-    transform: translateY(-5px) scale(1.04);
+
+    transform:
+        translateY(-5px)
+        scale(1.04);
 }
 
+/* ===== DISCORD ===== */
+
 .discord {
+
     background: #5865F2;
 
     box-shadow:
-        0 0 20px rgba(88,101,242,.35);
+        0 0 20px
+        rgba(88,101,242,.35);
 }
 
 .discord:hover {
+
     box-shadow:
-        0 0 35px rgba(88,101,242,.7);
+        0 0 35px
+        rgba(88,101,242,.7);
 }
 
+/* ===== WHATSAPP ===== */
+
 .whatsapp {
+
     background: #25D366;
+
     color: #061b0d;
 
     box-shadow:
-        0 0 20px rgba(37,211,102,.25);
+        0 0 20px
+        rgba(37,211,102,.25);
 }
 
 .whatsapp:hover {
+
     box-shadow:
-        0 0 35px rgba(37,211,102,.6);
+        0 0 35px
+        rgba(37,211,102,.6);
 }
 
+/* ===== ROJO ===== */
+
 .red {
+
     background: #ff003c;
 
     box-shadow:
-        0 0 25px rgba(255,0,60,.3);
+        0 0 25px
+        rgba(255,0,60,.3);
 }
 
 .red:hover {
+
     box-shadow:
-        0 0 40px rgba(255,0,60,.7);
+        0 0 40px
+        rgba(255,0,60,.7);
 }
 
 /* ===== SECCIONES ===== */
 
 section {
-    padding: 100px 7%;
+
+    padding:
+        100px
+        7%;
 }
 
 .section-title {
+
     text-align: center;
 
     font-size: 42px;
@@ -301,12 +474,14 @@ section {
 }
 
 .section-title span {
+
     color: #ff003c;
 }
 
 /* ===== CARDS ===== */
 
 .cards {
+
     max-width: 1100px;
 
     margin: auto;
@@ -316,14 +491,24 @@ section {
     grid-template-columns:
         repeat(
             auto-fit,
-            minmax(220px,1fr)
+            minmax(
+                220px,
+                1fr
+            )
         );
 
     gap: 20px;
 }
 
 .card {
-    background: rgba(255,255,255,.035);
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            .035
+        );
 
     border:
         1px solid
@@ -331,17 +516,22 @@ section {
 
     border-radius: 18px;
 
-    padding: 35px 25px;
+    padding:
+        35px
+        25px;
 
     text-align: center;
 
     transition: .3s;
 
-    backdrop-filter: blur(10px);
+    backdrop-filter:
+        blur(10px);
 }
 
 .card:hover {
-    transform: translateY(-8px);
+
+    transform:
+        translateY(-8px);
 
     border-color:
         rgba(255,0,60,.6);
@@ -352,48 +542,66 @@ section {
 }
 
 .card-icon {
+
     font-size: 45px;
+
     margin-bottom: 15px;
 }
 
 .card-icon.discord-icon {
+
     color: #5865F2;
 
     filter:
-        drop-shadow(0 0 12px rgba(88,101,242,.55));
+        drop-shadow(
+            0 0 12px
+            rgba(88,101,242,.55)
+        );
 }
 
 .card-icon.whatsapp-icon {
+
     color: #25D366;
 
     filter:
-        drop-shadow(0 0 12px rgba(37,211,102,.45));
+        drop-shadow(
+            0 0 12px
+            rgba(37,211,102,.45)
+        );
 }
 
 .card h3 {
+
     color: #ff315f;
+
     margin-bottom: 10px;
 }
 
 .card p {
+
     color: #999;
+
     line-height: 1.6;
 }
 
 /* ===== COMMUNITY ===== */
 
 .community {
+
     max-width: 900px;
 
     margin: auto;
 
-    padding: 60px 30px;
+    padding:
+        60px
+        30px;
 
     text-align: center;
 
     border-radius: 25px;
 
     background:
+
         linear-gradient(
             135deg,
             rgba(255,0,60,.1),
@@ -410,11 +618,14 @@ section {
 }
 
 .community h2 {
+
     font-size: 40px;
+
     margin-bottom: 15px;
 }
 
 .community p {
+
     color: #999;
 
     margin-bottom: 30px;
@@ -425,7 +636,10 @@ section {
 /* ===== FOOTER ===== */
 
 footer {
-    padding: 40px 20px;
+
+    padding:
+        40px
+        20px;
 
     text-align: center;
 
@@ -437,6 +651,7 @@ footer {
 }
 
 footer span {
+
     color: #ff003c;
 }
 
@@ -445,27 +660,38 @@ footer span {
 @media(max-width:650px) {
 
     nav {
-        padding: 0 20px;
+
+        padding:
+            0
+            20px;
     }
 
     nav .links {
+
         display: none;
     }
 
     .apple-logo {
+
         width: 130px;
+
         height: 130px;
     }
 
     .hero p {
+
         font-size: 16px;
     }
 
     section {
-        padding: 80px 20px;
+
+        padding:
+            80px
+            20px;
     }
 
     .section-title {
+
         font-size: 32px;
     }
 
@@ -474,17 +700,22 @@ footer span {
 /* ===== SCROLLBAR ===== */
 
 ::-webkit-scrollbar {
+
     width: 8px;
 }
 
 ::-webkit-scrollbar-track {
+
     background: #050505;
 }
 
 ::-webkit-scrollbar-thumb {
+
     background: #ff003c;
+
     border-radius: 10px;
 }
+
 </style>
 
 </head>
@@ -494,12 +725,19 @@ footer span {
 <!-- MANZANITAS -->
 
 <div class="apple" style="left:5%;font-size:22px;animation-duration:13s;">🍎</div>
+
 <div class="apple" style="left:15%;font-size:15px;animation-duration:17s;">🍎</div>
+
 <div class="apple" style="left:28%;font-size:25px;animation-duration:12s;">🍎</div>
+
 <div class="apple" style="left:40%;font-size:17px;animation-duration:19s;">🍎</div>
+
 <div class="apple" style="left:52%;font-size:28px;animation-duration:14s;">🍎</div>
+
 <div class="apple" style="left:65%;font-size:16px;animation-duration:18s;">🍎</div>
+
 <div class="apple" style="left:77%;font-size:24px;animation-duration:11s;">🍎</div>
+
 <div class="apple" style="left:90%;font-size:18px;animation-duration:16s;">🍎</div>
 
 <!-- NAVBAR -->
@@ -508,7 +746,14 @@ footer span {
 
 ```
 <div class="logo">
-    🍎 MANZANIZA
+
+    <img
+        src="https://i.pinimg.com/736x/25/67/c8/2567c8942ee8531bbd51b079822211e6.jpg"
+        alt="Manzaniza"
+    >
+
+    MANZANIZA
+
 </div>
 
 <div class="links">
@@ -532,14 +777,19 @@ footer span {
 
 <!-- HERO -->
 
-<section class="hero" id="inicio">
+<section
+    class="hero"
+    id="inicio"
+>
 
 ```
 <div class="apple-logo">
+
     <img
         src="https://i.pinimg.com/736x/25/67/c8/2567c8942ee8531bbd51b079822211e6.jpg"
         alt="Manzaniza"
     >
+
 </div>
 
 <h1>
@@ -547,9 +797,12 @@ footer span {
 </h1>
 
 <p>
+
     Bienvenido a Manzaniza 🍎.
+
     Una comunidad creada para pasarla bien,
     conocer gente, jugar y disfrutar juntos.
+
 </p>
 
 <div class="buttons">
@@ -560,8 +813,11 @@ footer span {
         target="_blank"
         rel="noopener noreferrer"
     >
+
         <i class="fa-brands fa-discord"></i>
+
         Discord
+
     </a>
 
     <a
@@ -570,8 +826,11 @@ footer span {
         target="_blank"
         rel="noopener noreferrer"
     >
+
         <i class="fa-brands fa-whatsapp"></i>
+
         WhatsApp
+
     </a>
 
 </div>
@@ -585,18 +844,23 @@ footer span {
 
 ```
 <h2 class="section-title">
+
     ¿Qué es
     <span>Manzaniza</span>?
+
 </h2>
 
 <div class="cards">
+
 
     <!-- DISCORD -->
 
     <div class="card">
 
         <div class="card-icon discord-icon">
+
             <i class="fa-brands fa-discord"></i>
+
         </div>
 
         <h3>
@@ -604,18 +868,23 @@ footer span {
         </h3>
 
         <p>
+
             Únete a nuestro servidor de Discord
             para conversar, jugar y conocer gente.
+
         </p>
 
     </div>
+
 
     <!-- WHATSAPP -->
 
     <div class="card">
 
         <div class="card-icon whatsapp-icon">
+
             <i class="fa-brands fa-whatsapp"></i>
+
         </div>
 
         <h3>
@@ -623,11 +892,14 @@ footer span {
         </h3>
 
         <p>
+
             Únete a nuestro grupo de WhatsApp
             y mantente conectado con la comunidad.
+
         </p>
 
     </div>
+
 
     <!-- DIVERSIÓN -->
 
@@ -642,11 +914,14 @@ footer span {
         </h3>
 
         <p>
+
             Juegos, eventos y actividades
             para disfrutar con la comunidad.
+
         </p>
 
     </div>
+
 
     <!-- EVENTOS -->
 
@@ -661,8 +936,10 @@ footer span {
         </h3>
 
         <p>
+
             Participa en eventos especiales
             organizados por Manzaniza.
+
         </p>
 
     </div>
@@ -680,20 +957,30 @@ footer span {
 <div class="community">
 
     <h2>
+
         Únete a
+
         <span style="color:#ff003c;">
+
             Manzaniza
+
         </span>
+
         🍎
+
     </h2>
 
     <p>
+
         ¿Qué esperas?
+
         Únete a nuestra comunidad y empieza
         a disfrutar de Manzaniza.
+
     </p>
 
     <div class="buttons">
+
 
         <a
             class="btn red"
@@ -701,9 +988,13 @@ footer span {
             target="_blank"
             rel="noopener noreferrer"
         >
+
             <i class="fa-brands fa-discord"></i>
+
             Entrar a Discord
+
         </a>
+
 
         <a
             class="btn whatsapp"
@@ -711,8 +1002,11 @@ footer span {
             target="_blank"
             rel="noopener noreferrer"
         >
+
             <i class="fa-brands fa-whatsapp"></i>
+
             Unirse a WhatsApp
+
         </a>
 
     </div>
@@ -730,7 +1024,11 @@ footer span {
 Hecho con
 ❤️
 para
-<span>Manzaniza</span>
+
+<span>
+    Manzaniza
+</span>
+
 🍎
 ```
 
@@ -745,28 +1043,51 @@ function createApple() {
     const apple =
         document.createElement("div");
 
-    apple.className = "apple";
+    apple.className =
+        "apple";
 
-    apple.textContent = "🍎";
+    apple.textContent =
+        "🍎";
 
     apple.style.left =
-        Math.random() * 100 + "vw";
+        Math.random() *
+        100 +
+        "vw";
 
     apple.style.fontSize =
-        (Math.random() * 18 + 12) + "px";
+        (
+            Math.random() *
+            18 +
+            12
+        ) +
+        "px";
 
     apple.style.animationDuration =
-        (Math.random() * 10 + 10) + "s";
+        (
+            Math.random() *
+            10 +
+            10
+        ) +
+        "s";
 
     apple.style.opacity =
-        Math.random() * .35 + .15;
+        Math.random() *
+        .35 +
+        .15;
 
-    document.body.appendChild(apple);
+    document.body.appendChild(
+        apple
+    );
 
     setTimeout(
-        () => apple.remove(),
+
+        () =>
+            apple.remove(),
+
         22000
+
     );
+
 }
 
 setInterval(
