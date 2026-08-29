@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,7 +9,6 @@
 <meta name="description" content="Manzaniza | Comunidad dedicada a la compra, venta y tradeo de Brainrots, CrossTrades, dinámicas y sorteos.">
 <meta name="theme-color" content="#ff003c">
 
-<!-- ICONOS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 <style>
@@ -32,7 +30,9 @@ body {
     overflow-x: hidden;
 }
 
-/* ===== FONDO ===== */
+/* ============================= */
+/* FONDO */
+/* ============================= */
 
 body::before {
     content: "";
@@ -54,7 +54,9 @@ body::before {
     z-index: -2;
 }
 
-/* ===== MANZANITAS ===== */
+/* ============================= */
+/* MANZANITAS FLOTANTES */
+/* ============================= */
 
 .apple {
     position: fixed;
@@ -88,7 +90,9 @@ body::before {
 
 }
 
-/* ===== NAVBAR ===== */
+/* ============================= */
+/* NAVBAR */
+/* ============================= */
 
 nav {
     position: fixed;
@@ -115,7 +119,9 @@ nav {
     z-index: 100;
 }
 
-/* ===== LOGO NAV ===== */
+/* ============================= */
+/* LOGO */
+/* ============================= */
 
 .logo {
     display: flex;
@@ -128,11 +134,8 @@ nav {
     font-weight: 900;
 
     text-shadow:
-        0 0 10px
-        rgba(255,0,60,.8),
-
-        0 0 25px
-        rgba(255,0,60,.4);
+        0 0 10px rgba(255,0,60,.8),
+        0 0 25px rgba(255,0,60,.4);
 }
 
 .logo img {
@@ -158,7 +161,9 @@ nav {
         rotate(-5deg);
 }
 
-/* ===== LINKS ===== */
+/* ============================= */
+/* LINKS */
+/* ============================= */
 
 nav a {
     color: #ddd;
@@ -180,7 +185,9 @@ nav a:hover {
         #ff003c;
 }
 
-/* ===== HERO ===== */
+/* ============================= */
+/* HERO */
+/* ============================= */
 
 .hero {
     min-height: 100vh;
@@ -196,12 +203,14 @@ nav a:hover {
     text-align: center;
 
     padding:
-        100px
+        110px
         20px
-        50px;
+        60px;
 }
 
-/* ===== IMAGEN GRANDE ===== */
+/* ============================= */
+/* IMAGEN GRANDE */
+/* ============================= */
 
 .apple-logo {
     width: 180px;
@@ -232,7 +241,6 @@ nav a:hover {
             0 0 15px
             rgba(255,0,60,.7)
         )
-
         drop-shadow(
             0 0 35px
             rgba(255,0,60,.4)
@@ -241,7 +249,7 @@ nav a:hover {
 
 @keyframes pulse {
 
-    0%,100% {
+    0%, 100% {
         transform: scale(1);
     }
 
@@ -251,7 +259,9 @@ nav a:hover {
 
 }
 
-/* ===== TITULO ===== */
+/* ============================= */
+/* TITULO */
+/* ============================= */
 
 .hero h1 {
 
@@ -263,6 +273,8 @@ nav a:hover {
         );
 
     font-weight: 900;
+
+    line-height: 1;
 
     background:
         linear-gradient(
@@ -298,16 +310,22 @@ nav a:hover {
 
 }
 
-/* ===== DESCRIPCION ===== */
+/* ============================= */
+/* DESCRIPCION */
+/* ============================= */
 
 .hero-description {
 
     max-width: 780px;
 
     margin:
-        20px
+        25px
         auto
         35px;
+
+    padding:
+        0
+        10px;
 
     color: #aaa;
 
@@ -325,15 +343,23 @@ nav a:hover {
     color: #ff315f;
 
     font-weight: 700;
+
+    text-shadow:
+        0 0 8px
+        rgba(255,0,60,.25);
 }
 
-/* ===== BOTONES ===== */
+/* ============================= */
+/* BOTONES */
+/* ============================= */
 
 .buttons {
 
     display: flex;
 
     justify-content: center;
+
+    align-items: center;
 
     flex-wrap: wrap;
 
@@ -362,7 +388,8 @@ nav a:hover {
 
     font-weight: 800;
 
-    transition: .3s;
+    transition:
+        .3s;
 
     border:
         1px solid
@@ -380,7 +407,9 @@ nav a:hover {
         scale(1.04);
 }
 
-/* ===== DISCORD ===== */
+/* ============================= */
+/* DISCORD */
+/* ============================= */
 
 .discord {
 
@@ -398,7 +427,9 @@ nav a:hover {
         rgba(88,101,242,.7);
 }
 
-/* ===== WHATSAPP ===== */
+/* ============================= */
+/* WHATSAPP */
+/* ============================= */
 
 .whatsapp {
 
@@ -418,7 +449,9 @@ nav a:hover {
         rgba(37,211,102,.6);
 }
 
-/* ===== ROJO ===== */
+/* ============================= */
+/* ROJO */
+/* ============================= */
 
 .red {
 
@@ -436,7 +469,9 @@ nav a:hover {
         rgba(255,0,60,.7);
 }
 
-/* ===== SECCIONES ===== */
+/* ============================= */
+/* SECCIONES */
+/* ============================= */
 
 section {
 
@@ -459,7 +494,9 @@ section {
     color: #ff003c;
 }
 
-/* ===== CARDS ===== */
+/* ============================= */
+/* CARDS */
+/* ============================= */
 
 .cards {
 
@@ -503,7 +540,8 @@ section {
 
     text-align: center;
 
-    transition: .3s;
+    transition:
+        .3s;
 
     backdrop-filter:
         blur(10px);
@@ -565,7 +603,9 @@ section {
     line-height: 1.6;
 }
 
-/* ===== COMMUNITY ===== */
+/* ============================= */
+/* COMMUNITY */
+/* ============================= */
 
 .community {
 
@@ -613,7 +653,9 @@ section {
     line-height: 1.7;
 }
 
-/* ===== MUSICA ===== */
+/* ============================= */
+/* BOTON MUSICA */
+/* ============================= */
 
 #musicBtn {
 
@@ -624,6 +666,7 @@ section {
     bottom: 25px;
 
     width: 55px;
+
     height: 55px;
 
     border:
@@ -650,19 +693,23 @@ section {
 
     z-index: 999;
 
-    transition: .3s;
+    transition:
+        .3s;
 }
 
 #musicBtn:hover {
 
-    transform: scale(1.1);
+    transform:
+        scale(1.1);
 
     box-shadow:
         0 0 30px
         rgba(255,0,60,.7);
 }
 
-/* ===== FOOTER ===== */
+/* ============================= */
+/* FOOTER */
+/* ============================= */
 
 footer {
 
@@ -684,7 +731,9 @@ footer span {
     color: #ff003c;
 }
 
-/* ===== RESPONSIVE ===== */
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
 
 @media(max-width:650px) {
 
@@ -700,10 +749,28 @@ footer span {
         display: none;
     }
 
+    .logo {
+
+        font-size: 20px;
+    }
+
+    .logo img {
+
+        width: 30px;
+
+        height: 30px;
+    }
+
     .apple-logo {
 
         width: 130px;
+
         height: 130px;
+    }
+
+    .hero {
+
+        padding-top: 100px;
     }
 
     .hero-description {
@@ -714,9 +781,23 @@ footer span {
 
         line-height: 1.7;
 
-        margin-top: 15px;
+        margin-top: 18px;
 
         margin-bottom: 30px;
+
+        padding:
+            0
+            5px;
+    }
+
+    .hero h1 {
+
+        font-size:
+            clamp(
+                45px,
+                15vw,
+                75px
+            );
     }
 
     section {
@@ -731,9 +812,27 @@ footer span {
         font-size: 32px;
     }
 
+    .community h2 {
+
+        font-size: 32px;
+    }
+
+    #musicBtn {
+
+        width: 50px;
+
+        height: 50px;
+
+        right: 18px;
+
+        bottom: 18px;
+    }
+
 }
 
-/* ===== SCROLLBAR ===== */
+/* ============================= */
+/* SCROLLBAR */
+/* ============================= */
 
 ::-webkit-scrollbar {
 
@@ -757,9 +856,15 @@ footer span {
 
 <body>
 
-<!-- ===== MUSICA ===== -->
+<!-- ============================= -->
+<!-- MUSICA -->
+<!-- ============================= -->
 
-<audio id="bgMusic" loop>
+<audio
+    id="bgMusic"
+    loop
+    preload="auto"
+>
 
     <source
         src="https://files.catbox.moe/po7kqw.mp3"
@@ -777,66 +882,102 @@ footer span {
 </button>
 
 
-<!-- ===== MANZANITAS ===== -->
+<!-- ============================= -->
+<!-- MANZANITAS -->
+<!-- ============================= -->
 
 <div
     class="apple"
-    style="left:5%;font-size:22px;animation-duration:13s;"
+    style="
+        left:5%;
+        font-size:22px;
+        animation-duration:13s;
+    "
 >
-🍎
+    🍎
 </div>
 
 <div
     class="apple"
-    style="left:15%;font-size:15px;animation-duration:17s;"
+    style="
+        left:15%;
+        font-size:15px;
+        animation-duration:17s;
+    "
 >
-🍎
+    🍎
 </div>
 
 <div
     class="apple"
-    style="left:28%;font-size:25px;animation-duration:12s;"
+    style="
+        left:28%;
+        font-size:25px;
+        animation-duration:12s;
+    "
 >
-🍎
+    🍎
 </div>
 
 <div
     class="apple"
-    style="left:40%;font-size:17px;animation-duration:19s;"
+    style="
+        left:40%;
+        font-size:17px;
+        animation-duration:19s;
+    "
 >
-🍎
+    🍎
 </div>
 
 <div
     class="apple"
-    style="left:52%;font-size:28px;animation-duration:14s;"
+    style="
+        left:52%;
+        font-size:28px;
+        animation-duration:14s;
+    "
 >
-🍎
+    🍎
 </div>
 
 <div
     class="apple"
-    style="left:65%;font-size:16px;animation-duration:18s;"
+    style="
+        left:65%;
+        font-size:16px;
+        animation-duration:18s;
+    "
 >
-🍎
+    🍎
 </div>
 
 <div
     class="apple"
-    style="left:77%;font-size:24px;animation-duration:11s;"
+    style="
+        left:77%;
+        font-size:24px;
+        animation-duration:11s;
+    "
 >
-🍎
+    🍎
 </div>
 
 <div
     class="apple"
-    style="left:90%;font-size:18px;animation-duration:16s;"
+    style="
+        left:90%;
+        font-size:18px;
+        animation-duration:16s;
+    "
 >
-🍎
+    🍎
 </div>
 
 
-<!-- ===== NAVBAR ===== -->
+<!-- ============================= -->
+<!-- NAVBAR -->
+<!-- ============================= -->
 
 <nav>
 
@@ -870,7 +1011,9 @@ footer span {
 </nav>
 
 
-<!-- ===== HERO ===== -->
+<!-- ============================= -->
+<!-- HERO -->
+<!-- ============================= -->
 
 <section
     class="hero"
@@ -886,9 +1029,11 @@ footer span {
 
     </div>
 
+
     <h1>
         MANZANIZA
     </h1>
+
 
     <p class="hero-description">
 
@@ -900,6 +1045,7 @@ footer span {
         y organizada.
 
     </p>
+
 
     <div class="buttons">
 
@@ -915,6 +1061,7 @@ footer span {
             Discord
 
         </a>
+
 
         <a
             class="btn whatsapp"
@@ -934,9 +1081,13 @@ footer span {
 </section>
 
 
-<!-- ===== COMUNIDAD ===== -->
+<!-- ============================= -->
+<!-- COMUNIDAD -->
+<!-- ============================= -->
 
-<section id="comunidad">
+<section
+    id="comunidad"
+>
 
     <h2 class="section-title">
 
@@ -945,6 +1096,7 @@ footer span {
 
     </h2>
 
+
     <div class="cards">
 
 
@@ -952,9 +1104,13 @@ footer span {
 
         <div class="card">
 
-            <div class="card-icon discord-icon">
+            <div
+                class="card-icon discord-icon"
+            >
 
-                <i class="fa-brands fa-discord"></i>
+                <i
+                    class="fa-brands fa-discord"
+                ></i>
 
             </div>
 
@@ -977,9 +1133,13 @@ footer span {
 
         <div class="card">
 
-            <div class="card-icon whatsapp-icon">
+            <div
+                class="card-icon whatsapp-icon"
+            >
 
-                <i class="fa-brands fa-whatsapp"></i>
+                <i
+                    class="fa-brands fa-whatsapp"
+                ></i>
 
             </div>
 
@@ -1046,9 +1206,13 @@ footer span {
 </section>
 
 
-<!-- ===== UNETE ===== -->
+<!-- ============================= -->
+<!-- CONTACTO -->
+<!-- ============================= -->
 
-<section id="contacto">
+<section
+    id="contacto"
+>
 
     <div class="community">
 
@@ -1056,13 +1220,16 @@ footer span {
 
             Únete a
 
-            <span style="color:#ff003c;">
+            <span
+                style="color:#ff003c;"
+            >
                 Manzaniza
             </span>
 
             🍎
 
         </h2>
+
 
         <p>
 
@@ -1073,7 +1240,9 @@ footer span {
 
         </p>
 
+
         <div class="buttons">
+
 
             <a
                 class="btn red"
@@ -1082,11 +1251,14 @@ footer span {
                 rel="noopener noreferrer"
             >
 
-                <i class="fa-brands fa-discord"></i>
+                <i
+                    class="fa-brands fa-discord"
+                ></i>
 
                 Entrar a Discord
 
             </a>
+
 
             <a
                 class="btn whatsapp"
@@ -1095,7 +1267,9 @@ footer span {
                 rel="noopener noreferrer"
             >
 
-                <i class="fa-brands fa-whatsapp"></i>
+                <i
+                    class="fa-brands fa-whatsapp"
+                ></i>
 
                 Unirse a WhatsApp
 
@@ -1108,7 +1282,9 @@ footer span {
 </section>
 
 
-<!-- ===== FOOTER ===== -->
+<!-- ============================= -->
+<!-- FOOTER -->
+<!-- ============================= -->
 
 <footer>
 
@@ -1125,14 +1301,22 @@ footer span {
 </footer>
 
 
+<!-- ============================= -->
+<!-- JAVASCRIPT -->
+<!-- ============================= -->
+
 <script>
 
-/* ===== MANZANITAS AUTOMATICAS ===== */
+/* ============================= */
+/* MANZANITAS AUTOMATICAS */
+/* ============================= */
 
 function createApple() {
 
     const apple =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
     apple.className =
         "apple";
@@ -1183,7 +1367,9 @@ setInterval(
 );
 
 
-/* ===== MUSICA ===== */
+/* ============================= */
+/* MUSICA */
+/* ============================= */
 
 const music =
     document.getElementById(
@@ -1197,9 +1383,16 @@ const musicBtn =
 
 music.volume = 0.35;
 
+
+/* ============================= */
+/* BOTON MUSICA */
+/* ============================= */
+
 function toggleMusic() {
 
-    if (music.paused) {
+    if (
+        music.paused
+    ) {
 
         music.play()
             .then(() => {
@@ -1225,6 +1418,32 @@ function toggleMusic() {
     }
 
 }
+
+
+/* ============================= */
+/* INTENTO DE AUTOPLAY */
+/* ============================= */
+
+window.addEventListener(
+    "load",
+    () => {
+
+        music.play()
+            .then(() => {
+
+                musicBtn.textContent =
+                    "🔊";
+
+            })
+            .catch(() => {
+
+                musicBtn.textContent =
+                    "🎵";
+
+            });
+
+    }
+);
 
 </script>
 
